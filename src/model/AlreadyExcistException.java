@@ -5,14 +5,13 @@ public class AlreadyExcistException extends Exception{
 	private int id;
 	private String msg;
 	public AlreadyExcistException(int n, String m){
-		super("There is another Client with the same info");
+		super("There is another Client with the same info" );
 		msg=m;
 		id = n;
 		exist( n);
 	}
 	
 	
-
 	/**
 	 * @return the id
 	 */
@@ -27,7 +26,6 @@ public class AlreadyExcistException extends Exception{
 	public String getMsg() {
 		return msg;
 	}
-
 
 	public void exist(int id1 ) {
 		if(id1==this.getId()) {

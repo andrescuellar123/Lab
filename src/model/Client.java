@@ -1,7 +1,9 @@
 	package model;
 
+import java.util.ArrayList;
+
 public class Client {
-	private Turn clientTurn;
+	private ArrayList<Turn> clientTurn;
 	private int id;
 	private String typeId;
 	private String name;
@@ -24,6 +26,7 @@ public class Client {
 		this.lastName = lastName;
 		this.telephone = telephone;
 		this.address = address;
+		clientTurn =new ArrayList<Turn>();
 	}
 	/**
 	 * @return the id
@@ -98,10 +101,24 @@ public class Client {
 		this.address = address;
 	}
 	
-	public String clientTurn() {
-		String msg= clientTurn.getName();
+	public ArrayList<Turn> getClientTurn() {
+		return clientTurn;
+	}
+	public void setClientTurn(ArrayList<Turn> clientTurn) {
+		this.clientTurn = clientTurn;
+	}
+	public String clientTurns() {
+		String msg= "";
+		for (int i = 0; i < clientTurn.size(); i++) {
+			 msg= clientTurn.get(i).getName();
+		}
+		
 		
 		return msg;
+	}
+	
+	public void addTurn(Turn t) {
+		clientTurn.add(t);
 	}
 	
 	

@@ -11,40 +11,72 @@ public class Turn {
 	 */
 	public Turn(int number,char letter) {
 		
-		this.number = 0;
-		this.letter = 'A';
+		this.number = number;
+		this.letter = letter;
 	}
 	
+	
+	
+	public int getNumber() {
+		return number;
+	}
+
+
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+
+
+	public char getLetter() {
+		return letter;
+	}
+
+	
+
+
+	public void setLetter(char letter) {
+		this.letter = letter;
+	}
+
+
+
 	public String getName() {
 		String msg ="";
 		
 		if(number<=9) {
-			msg="el turno es: " + letter + 0 + number;
+			msg="the turn is: " + letter + 0 + number;
 			}
 		else {
-			msg="el turno es: " + letter +  number;
+			msg="the turn is: " + letter +  number;
 		}
-		getNextTurn();
+
 		
 		return  msg;
 	}
 	
-	public Turn getNextTurn() {
+	public String getNextTurn() {
 		char letter2 = letter;
 		int number2=number+1;
-		
+		String msg="";
+		Turn t1 ;
 		if(number2==100) {
 			number2=0;
-			if(letter2=='z') {
+			if(letter2=='Z') {
 				letter2='A';
 			}
 			else {
 				letter2++;
 			}
 		}
-		return new Turn(number2,letter2);
-		
+		t1= new Turn(number2,letter2);
+		return msg=""+t1.getName();
 	}
+
+
+
+	
 
 
 	
